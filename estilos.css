@@ -38,13 +38,14 @@ header
 {
 	background: #343B54;
 	color:white;
-	padding: 0.5em;
-
+	padding: 1em;
 	position: relative;
+	overflow: hidden;
 }
 header figure
 {
 	float: left;
+
 }
 header h1
 {
@@ -72,7 +73,7 @@ header #logo img
 	top: 0;
 	border-right: 1px solid white;
 	width: 52px;
-	padding-right: 0.5em; 
+	padding:0 0.5em 0 0;
 }
 nav
 {
