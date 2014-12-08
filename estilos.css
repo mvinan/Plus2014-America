@@ -77,9 +77,12 @@ header #logo img
 }
 nav
 {
+	text-align: center;
+	box-shadow: rgba(0,0,0,0.5) 2px 2px 2px;
 	background: #80BCA3;
 	padding: 0 0.5em;
 	position: relative;
+	padding: 0 5em 0 0;
 }
 nav ul
 {
@@ -168,11 +171,13 @@ nav ul li a
 	font-size: 1.2em;
 	font-style: italic;
 	padding: 1em 1em 0 0;
+	text-transform: capitalize;
 }
 #contenido .item .titulo_item a
 {
 	color:#444;
 	text-decoration: none;
+
 }
 #contenido .item .votacion
 {
