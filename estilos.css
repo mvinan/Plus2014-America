@@ -1,7 +1,63 @@
+/*@font-face {
+    font-family: 'Open Sans';
+    src: url('fuentes/OpenSans-Regular-webfont.eot');
+    src: url('fuentes/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fuentes/OpenSans-Regular-webfont.woff') format('woff'),
+         url('fuentes/OpenSans-Regular-webfont.ttf') format('truetype'),
+         url('fuentes/OpenSans-Regular-webfont.svg#Open Sans') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}*/
+@font-face {
+	font-family: 'icomoon';
+	src:url('fuentes/icomoon.eot?861156');
+	src:url('fuentes/icomoon.eot?#iefix861156') format('embedded-opentype'),
+		url('fuentes/icomoon.woff?861156') format('woff'),
+		url('fuentes/icomoon.ttf?861156') format('truetype'),
+		url('fuentes/icomoon.svg?861156#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-pluma:before {
+	content: "\e600";
+	margin-right: 0.8em;
+}
+.icon-estrella:before {
+	content: "\e601";
+	color: #FFBE2C;
+	margin-right: 0.4em;
+	position: relative;
+	top: 0.1em;
+}
+.icon-f-abajo:before {
+	content: "\e602";
+	color: #DD4F24;
+}
+.icon-f-arriba:before {
+	content: "\e603";
+
+}
+
+
 body
 {
 	background: #EEEEEE;
-	font-family: Arial;
+	font-family: "Open Sans";
 	font-size: 16px;
 	margin: 0;
 }
@@ -9,6 +65,10 @@ a
 {
 	color:#22BCE0;
 
+}
+aside
+{
+	display: none;
 }
 footer
 {
@@ -34,28 +94,40 @@ footer p:last-child:after
 {
  	content :" -";
 }
+
 header
 {
 	background: #343B54;
 	color:white;
-	padding: 1em;
+	padding: 2em;
 	position: relative;
 	overflow: hidden;
+}
+header .fuente_titulo
+{
+	font-family: "Open Sans";
 }
 header figure
 {
 	float: left;
 
 }
+
+/*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+/*este estilo se conecta con el javascript del jquerty que hace que podamos usar css3 para modificaciones*/
+header .fuente_titulo span.word4{
+	font-size: 10px;
+}
+/*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 header h1
 {
 	font-size: 1.2em;
 	font-weight: normal;
-	margin: 0.2em 70px 0 0;
+	margin: 0.2em 70px 0 80px;
 }
 header #avatar
 {
-	margin: 0.5em 0.5em 0 0;
+	margin: 1.5em 0.5em 0 0;
 	position: absolute;
 	right: 0;
 	top: 0;
@@ -65,24 +137,45 @@ header #avatar img
 	border-radius: 50%;
 	width: 55px;
 }
+header #logo
+{
+/*	-webkit-trasform:rotate(180deg); chrome
+	-moz-trasform:rotate(180deg); mozilla
+	-ms-trasform:rotate(180deg);InternetExplorer */
+
+	border-right: 1px solid white;
+	float: left;
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin:1em 2em 0 0;
+	padding-right: 1em;
+
+
+}
+header #logo img:hover
+{
+	-webkit-transform:rotate(360deg);
+
+}
 header #logo img
 {
-	margin: 0.5em 0 0 0.5em;
-	position: absolute;
+	-webkit-transition:.3s;
+	float: left;
 	left: 0;
 	top: 0;
-	border-right: 1px solid white;
 	width: 52px;
+	margin: 0 0.5em 0 .5em;
 	padding:0 0.5em 0 0;
+
 }
 nav
 {
 	text-align: center;
 	box-shadow: rgba(0,0,0,0.5) 2px 2px 2px;
-	background: #80BCA3;
-	padding: 0 0.5em;
+	background: #80BCA3; /*#E0224D*/
 	position: relative;
-	padding: 0 5em 0 0;
+	padding: 0 6em 0 0;
 }
 nav ul
 {
@@ -102,9 +195,29 @@ nav ul  #publicar_nav a
 	border-radius: 5px;	
 	box-shadow:rgba(0,0,0,0.5) 5px 5px 10px;
 	font-style: italic;
-	padding: 0.7em 0.5em;
+	padding: 0.8em 0.8em 0.8em 2.5em;
 	text-decoration: none;
 	text-shadow:rgba(0,0,0,0.5) 2px 2px 3px;
+}
+nav ul  #publicar_nav a:before
+{
+	position: absolute;
+	left: 0.5em;
+	top: 0.9em;
+}
+nav ul #publicar_nav a:hover:before
+{
+	-webkit-transform:scale(1.4,1.4);
+/*	font-size: 25px;
+	position: absolute;
+	left: .2em;
+	top: .4em;*/
+/*	padding-left:30px;*/ 
+}
+nav ul li a:hover
+{
+
+	background: #343B54;
 }
 nav ul li
 {
@@ -115,9 +228,13 @@ nav ul li a
 {
 	color: white;
 	display: block;
-	padding: 0.5em 0em;
+	padding: 0.5em;
 	text-decoration: none;
+	-webkit-transition:.3s;
 }
+/*hacemos que el video no se muestre, para que se muestre tenemos que utilizar el media jquerty*/
+
+
 #contenido
 {
 	margin: 1em;
@@ -191,9 +308,51 @@ nav ul li a
 	width: 90%;
 
 }
+#contenido .item .votacion a
+{
+	text-decoration: none;
+}
 #contenido .item .votacion .comentarios_item,
 #contenido .item .votacion .guardar_item
 {
 	float:right;
 }
+/*media jquerty en este caso hacemos mediante el media querty al momento de 
+simplificar la pagina a la resolucion del iphone se hace responsive design*/
 
+@media screen and (min-width: 768px){
+
+	#contenido{
+		overflow: hidden;
+	}
+
+	#contenido .item{
+		width: 48%;
+		float: left;
+		margin-right: 1%;
+	}
+	/*nth-child es un selector para unicamente en este caso escojer odd(impares)*/
+	#contenido .item:nth-child(odd){
+		margin-right: 3%;
+	}
+}
+/*
+@media print{
+	body{
+		font-size: 50px;
+	}
+}*/
+@media screen and (min-width: 1000px){
+	
+	aside
+	{
+		display:block;
+		float: right;
+		margin: 1em;
+		width: 20%;
+	}
+	aside video
+	{
+		width: 100%;
+	}
+}
