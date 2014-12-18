@@ -1,13 +1,5 @@
-/*@font-face {
-    font-family: 'Open Sans';
-    src: url('fuentes/OpenSans-Regular-webfont.eot');
-    src: url('fuentes/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fuentes/OpenSans-Regular-webfont.woff') format('woff'),
-         url('fuentes/OpenSans-Regular-webfont.ttf') format('truetype'),
-         url('fuentes/OpenSans-Regular-webfont.svg#Open Sans') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}*/
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:700,400);
+
 @font-face {
 	font-family: 'icomoon';
 	src:url('fuentes/icomoon.eot?861156');
@@ -53,6 +45,15 @@
 
 }
 
+aside video
+{
+	position: absolute;
+	margin-right: 6em;
+	float: right;
+	top: 200px;
+	right: -104px
+
+}
 
 body
 {
@@ -68,6 +69,7 @@ a
 }
 aside
 {
+	position:relative;
 	display: none;
 }
 footer
@@ -115,8 +117,16 @@ header figure
 
 /*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 /*este estilo se conecta con el javascript del jquerty que hace que podamos usar css3 para modificaciones*/
-header .fuente_titulo span.word4{
+header .fuente_titulo span.word4, span.word1{
 	font-size: 10px;
+	color: crimson;
+}
+header .fuente_titulo span.word5{
+	color: peru;
+}
+header .fuente_titulo span.word8{
+	color: crimson;
+	font-style: italic;
 }
 /*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 header h1
@@ -155,18 +165,22 @@ header #logo
 }
 header #logo img:hover
 {
-	-webkit-transform:rotate(360deg);
+
+	transform:rotate(-360deg);
+
+
 
 }
 header #logo img
 {
-	-webkit-transition:.3s;
+	transition:.6s;
+
 	float: left;
 	left: 0;
 	top: 0;
-	width: 52px;
-	margin: 0 0.5em 0 .5em;
-	padding:0 0.5em 0 0;
+	width: 60px;
+	margin: 0.5em 0.5em 0 1em;
+	padding:0 0em 0 0;
 
 }
 nav
@@ -199,6 +213,10 @@ nav ul  #publicar_nav a
 	text-decoration: none;
 	text-shadow:rgba(0,0,0,0.5) 2px 2px 3px;
 }
+nav ul  #publicar_nav a:hover
+{
+	box-shadow: 0px 0px 50px #ff0;
+}
 nav ul  #publicar_nav a:before
 {
 	position: absolute;
@@ -207,7 +225,7 @@ nav ul  #publicar_nav a:before
 }
 nav ul #publicar_nav a:hover:before
 {
-	-webkit-transform:scale(1.4,1.4);
+	transform:scale(1.4,1.4);
 /*	font-size: 25px;
 	position: absolute;
 	left: .2em;
@@ -230,7 +248,7 @@ nav ul li a
 	display: block;
 	padding: 0.5em;
 	text-decoration: none;
-	-webkit-transition:.3s;
+	transition:.3s;
 }
 /*hacemos que el video no se muestre, para que se muestre tenemos que utilizar el media jquerty*/
 
@@ -282,6 +300,7 @@ nav ul li a
 #contenido .item .imagen_item img
 {
 	width: 96px;
+	height: 126px;
 }
 #contenido .item .titulo_item
 {
@@ -320,7 +339,7 @@ nav ul li a
 /*media jquerty en este caso hacemos mediante el media querty al momento de 
 simplificar la pagina a la resolucion del iphone se hace responsive design*/
 
-@media screen and (min-width: 768px){
+@media screen and (min-width: 800px){
 
 	#contenido{
 		overflow: hidden;
@@ -342,10 +361,11 @@ simplificar la pagina a la resolucion del iphone se hace responsive design*/
 		font-size: 50px;
 	}
 }*/
-@media screen and (min-width: 1000px){
+@media screen and (min-width: 1200px){
 	
 	aside
 	{
+		position: relative;
 		display:block;
 		float: right;
 		margin: 1em;
@@ -356,3 +376,43 @@ simplificar la pagina a la resolucion del iphone se hace responsive design*/
 		width: 100%;
 	}
 }
+
+/*
+**
+**
+Formulario
+**
+**
+*/
+
+
+.formulario
+{
+	padding: 1em;
+	text-align: right;
+	display: none;
+}
+
+.formulario input
+{
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	padding: 0.2em 0.6em;
+}
+
+.formulario input[type="submit"]
+{
+	background: #22BCE0;
+	border-color: #22BCE0;
+	box-shadow: rgba(0, 0, 0, 0.5) 5px 5px 20px;
+	font-style: italic;
+	text-shadow: rgba(0, 0, 0, 0.5)2px 2px 5px;
+	color: white;
+}
+
+
+
+
+
+
+

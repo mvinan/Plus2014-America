@@ -1,30 +1,25 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="-webkit-">
 <head>
 	<meta charset="utf-8"/>
 	<meta name="description" content="Proyecto de la primera generación del 2014 del curso de diseño web online" />
-	<meta name="viewport" content="width=device-width, minimun-scale=1, maximun-scale=1">
+	<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1"/>
 	<title> Puls2014: Comunidad de personas inteligentes atractivas </title>
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:700,400' rel='stylesheet' type='text/css'>
+
+	<link type="text/css" rel="stylesheet" href="normalize.css"/>
+	<link type="text/css" rel="stylesheet" href="estilos.css"/>
+	<script type="text/javascript" href="prefixfree.min.js"></script>
 	
-	<!-- link a la libreria jquerty alojada en la web-->
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-	<!-- este es el link al jquerty.lettering local -->
-	<script src="Lettering.js-master/jquery.lettering.js"></script>
-	<script type="text/javascript" src="jquery.js"></script>
-	
-	<link rel="stylesheet" href="normalize.css"/>
-	<link rel="stylesheet" href="estilos.css"/>
 </head>
 <body>
 	<header>
 		<figure id="logo">
 			<img src="logo.png">
 		</figure>
-		<h1 class="fuente_titulo">Pulse 2014: Comunidad de personas atractivas y sexy.
+		<h1 class="fuente_titulo">Pulse 2014: Comunidad de personas atractivas.
 		</h1>
 		<figure id="avatar">
-			<img src="avatar.jpg"/>
+<!-- 			<img src="avatar.jpg"/> -->
 		</figure>
 	</header>
 
@@ -36,12 +31,19 @@
 			<li><a href="#">CSS3</a></li>
 			<li><a href="#">DJango</a></li>
 			<li id="publicar_nav">
-				<a href="#" class="icon-pluma">Publicar</a>
+				<a href="#" class="icon-pluma" id="mostrar-form">Publicar</a>
 			</li>
 		</ul>
 	</nav>
 
+	<form action="" id="formulario" class="formulario">
+		<input type="text" id="titulo" placeholder="Título" required>
+		<input type="url" id="url" placeholder="Link" required>
+		<input type="submit" value="Enviar">
+	</form>
+
 	<aside>
+		<div id="geo"></div>
 		<video width="320" height="240"  controls>
 			<source src="video.mp4" type="video/mp4">
 			<!-- 	Tu navegador no soporta este contenido tienes que actualizarlo -->
@@ -167,6 +169,18 @@
 		<p>
 			Mejorando.la 2014
 		</p>
+		<div class="logos"></div>
 	</footer>
+
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="codigo.js"></script>
+    <script src="geo.js"></script>
+    <script src="ajax.js"></script>
+    <script>
+    	$(function(){
+    		
+
+    	});
+    </script>
 </body>
 </html>
